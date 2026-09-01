@@ -1,0 +1,13 @@
+inheritance of attributions:-<code>
+class animal:
+    eat = "animal eat"
+    speak = "animal speak"
+
+class Dog(animal):
+    sound = "Dog bark"
+
+D1 = Dog()
+
+print(D1.eat)
+print(D1.speak)
+print(D1.sound)
