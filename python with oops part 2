@@ -1,0 +1,19 @@
+inheritance of methods:-<code>
+input:-
+class animal:
+...     def eat(self):
+...         print("animal eat")
+...     def speak(self):
+...         print("animal speak")
+... class Dog(animal):
+...     def sound(self):
+...         print("Dog bark")
+... D1=Dog()
+... D1.eat()
+... D1.speak()
+... D1.sound()
+...
+output:-
+animal eat
+animal speak
+Dog bark
