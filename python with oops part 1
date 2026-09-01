@@ -1,0 +1,13 @@
+Q) write a program to create a class and object 
+sol:-
+input:-
+public class Main {
+    public static void main(String[] args) {
+        
+        Car myCar = new Car();
+        myCar.brand = "Toyota";
+        myCar.color = "Red";
+        myCar.year = 2024;
+        myCar.displayDetails();
+    }
+}
