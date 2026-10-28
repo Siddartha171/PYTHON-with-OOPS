@@ -1,0 +1,40 @@
+class Book:
+    def __init__(self, book_id, book_name, author):
+        self.book_id = book_id
+        self.book_name = book_name
+        self.author = author
+        self.availability = True             # True = available, False = not available
+    def display_book(self):
+        status = "Available" if self.availability else "Issued"
+        print(f"ID: {self.book_id} ")
+        print(f"Name: {self.book_name}")
+        print(f"Author: {self.author} ")
+        print(f"Status: {status}")   
+    def issue_book(self):
+        if self.availability:
+            self.availability = False
+            print(f"'{self.book_name}' has been issued successfully.")
+        else:
+            print(f"Sorry, '{self.book_name}' is already issued. Cannot issue again.")
+
+    def return_book(self):  
+        if not self.availability:
+            self.availability = True
+            print(f"'{self.book_name}' has been returned successfully.")
+        else:
+            print(f"'{self.book_name}' was not issued, so cannot return.")
+
+b1 = Book(1, "My Nightmare came True", "Thumma.Siddartha")
+b2 = Book(2, "Don't tell Me the Truth", "Thumma.Siddartha")
+
+b1.display_book()
+b1.issue_book()
+b1.return_book()
+
+output:-
+ID: 1
+Name: My Nightmare came True
+Author: Thumma.Siddartha
+Status: Available
+'My Nightmare came True' has been issued successfully.
+'My Nightmare came True' has been returned successfully.
