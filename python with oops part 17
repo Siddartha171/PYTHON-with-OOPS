@@ -1,0 +1,11 @@
+>>> try:
+...     number=int(input("enter number="))
+... except:
+...       print("invalid input")
+...
+enter number=78
+>>>
+>>>
+>>>
+>>>
+no output......
