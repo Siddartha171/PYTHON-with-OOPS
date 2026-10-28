@@ -1,0 +1,69 @@
+ class Product:
+    def __init__(self, product_id, name, price):
+        self.product_id = product_id
+        self.name = name
+        self.price = price
+
+    def __str__(self):
+        return f"{self.product_id} - {self.name} - Rs.{self.price}"
+
+class ShoppingCart:
+    def __init__(self):
+        self.products = []  # list of Product objects
+
+    def add_product(self, product):
+        self.products.append(product)
+        print(f"{product.name} added to cart.")
+
+    def remove_product(self, product_id):
+        for p in self.products:
+            if p.product_id == product_id:
+                self.products.remove(p)
+                print(f"{p.name} removed from cart.")
+                return
+        print("Product not found in cart.")
+
+    def display_cart(self):
+        if not self.products:
+            print("Cart is empty.")
+            return
+        print("\n--- Cart Items ---")
+        for p in self.products:
+            print(p)
+
+    def calculate_total(self):
+        return sum(p.price for p in self.products)
+
+class Customer:
+    def __init__(self, customer_id, name):
+        self.customer_id = customer_id
+        self.name = name
+        self.cart = ShoppingCart()  # each customer has a cart
+
+    def add_product(self, product):
+        self.cart.add_product(product)
+
+    def remove_product(self, product_id):
+        self.cart.remove_product(product_id)
+
+    def display_cart(self):
+        print(f"\nCustomer: {self.name}")
+        self.cart.display_cart()
+        print(f"Total: Rs.{self.cart.calculate_total()}")
+
+p1 = Product(101, "laptop", 50000)
+p2 = Product(102, "mouse", 800)
+p3 = Product(103, "keyboard", 1500)
+
+c1 = Customer(1, "sid")
+
+c1.add_product(p1)
+c1.add_product(p2)
+
+c1.display_cart()
+
+output:-
+--- Cart Items ---
+101 - laptop - Rs.50000
+102 - mouse - Rs.800
+Total: Rs.50800
