@@ -1,0 +1,15 @@
+ try:
+     a=int(input("enter a="))
+     b=int(input("enter b="))
+     print(a/b)
+ except ValueError:
+     print("enter numbers only not others.....")
+ except ZeroDivisonError:
+     print("division not haved....see the input and exter")
+output:-
+(input)
+enter a=12
+enter b=e
+(output)
+enter numbers only not others.....
+>>>
