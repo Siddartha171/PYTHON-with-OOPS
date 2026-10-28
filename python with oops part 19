@@ -1,0 +1,42 @@
+import math
+
+class Shape:
+    def area(self):
+        print("Area method in Shape class")
+
+
+class Circle(Shape):
+    def __init__(self, r):
+        self.r = r
+    
+    def area(self):
+        return math.pi * self.r * self.r
+
+class Rectangle(Shape):
+    def __init__(self, length, breadth):
+        self.length = length
+        self.breadth = breadth
+    
+    def area(self):
+        return self.length * self.breadth
+
+class Triangle(Shape):
+    def __init__(self, base, height):
+        self.base = base
+        self.height = height
+    
+    def area(self):
+        return 0.5 * self.base * self.height
+
+c = Circle(7)
+r = Rectangle(10, 5)
+t = Triangle(8, 6)
+
+print(f"Circle Area: {c.area():.2f}")
+print(f"Rectangle Area: {r.area()}")
+print(f"Triangle Area: {t.area()}")
+
+output:-
+Circle Area: 153.94
+Rectangle Area: 50
+Triangle Area: 24.0
