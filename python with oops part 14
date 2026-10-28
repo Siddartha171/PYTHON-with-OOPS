@@ -1,0 +1,9 @@
+from abc import ABC, abstractmethod
+class CoffeeMachine(ABC):
+    
+    @abstractmethod
+    def brew_coffee(self):
+        pass
+
+    def turn_on(self):
+        print("Machine is powered on. Ready to brew!")
