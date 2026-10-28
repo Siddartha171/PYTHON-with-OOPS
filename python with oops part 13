@@ -1,0 +1,7 @@
+>>> from abc import ABC,abstractmethod
+>>> class animal(ABC):
+...     @abstractmethod
+...     def sound(self):
+...         pass
+...
+>>>
